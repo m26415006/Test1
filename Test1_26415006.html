@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel=stylesheet href=jm/jquery.mobile-1.4.5.css />
+	<script src=jm/demos/js/jquery.js></script>
+	<script src=jm/jquery.mobile-1.4.5.js></script>
+	<style type="text/css">
+		.rwd-example .ui-body {
+			    text-align: left;
+			    border-color: #ddd;
+		}
+		.rwd-example p {
+			    color: #777;
+			    line-height: 140%
+		}
+		/* Stack all blocks to start */
+		.rwd-example .ui-block-a,
+		.rwd-example .ui-block-b,
+		.rwd-example .ui-block-c {
+			    width: 100%;
+			    float: none;
+		}
+		/* Collapsing borders */
+		.rwd-example > div + div .ui-body {
+			    border-top-width: 0;
+		}
+		@media all and (min-width: 55em) {
+			    .rwd-example .ui-body {
+				       min-height: 18em;
+			    }
+			    .rwd-example .ui-block-a,
+			    .rwd-example .ui-block-c {
+				      float: left;
+				      width: 49.95%;
+			    }
+			    .rwd-example .ui-block-b,
+			    .rwd-example .ui-block-c {
+				      float: left;
+				      width: 24.925%;
+			    }
+			    .rwd-example > div:first-child .ui-body {
+				        border-bottom-width: 1px;
+			    }
+			    .rwd-example > div + div .ui-body {
+				        border-left-width: 0;
+			    }
+		}
+	</style>
+</head>
+<body>
+	<div data-role="page" id="page1">
+		<div data-role="content">        
+			<label for="pages" class="select">Navigate to page:</label>
+			<select name="pages" id="selectPages" class="navigateToPage">
+				<option>Select a Page</option>
+				<option value="page2">Page 2</option>
+				<option value="page3">Page 3</option>
+			</select>
+			<br />
+			<h1>Decimal to Binary</h1>
+			<form name=first> 
+				Decimal Number: <input name=deci type="text" onkeyup="change(this)" size=20>   
+				Binary Number: <input name=deciBin type="text" size=20 readonly class=resform>
+			</form>
+			<br><br>
+			<h1>Binary to Hexadecimal</h1>
+			<input type=text name=t1 id='t1' size=8>
+<input type=button name='SB' value='Change to Hex' onclick="hex_convt()";> 
+<div id=d1></div>
+<br><br>
+		</div>
+	</div>
+
+	<div data-role="page" id="page2">
+		<div data-role="content">        
+			<label for="pages2" class="select">Navigate to page:</label>
+			<select name="pages2" id="selectPages2" class="navigateToPage">
+				<option>Select a Page</option>
+				<option value="page1">Page 1</option>
+				<option value="page3">Page 3</option>
+			</select>
+			<br />
+			<table>
+				<tbody>
+					<tr>
+						<td colspan="5">
+							<textarea id="id1" cols="50" rows="10"></textarea>
+							<!-- RGB value boxes !-->
+						</td>
+						<td>
+							R
+							<input id="red" type=text size=3 maxlength=3 name="r" value="0" onBlur="rgb()">
+						</td>
+						<td>
+							G
+							<input id="green" type=text size=3 maxlength=3 name="g" value="0" onBlur="rgb()">
+						</td>
+						<td>    
+							B
+							<input id="blue" type=text size=3 maxlength=3 name="b" value="0" onBlur="rgb()">
+						</td>
+					</tr>
+				</tbody>
+			</table>  
+		</div>
+	</div>
+
+	<div data-role="page" id="page3">
+		<div data-role="content">        
+			<label for="pages3" class="select">Navigate to page:</label>
+			<select name="pages3" id="selectPages3" class="navigateToPage">
+				<option>Select a Page</option>
+				<option value="page1">Page 1</option>
+				<option value="page2">Page 2</option>   
+			</select>
+			<br />
+			<div class="ui-block-b">
+				<div class="ui-body ui-body-d">
+					<h4>Introduction Technology</h4>
+					<p>Pada bab 1 kita dijelaskan mengenai perubahan dari mobile phone, dari 1G-5G. Inilah kecepatan dari generasi ke generasi
+					</p>
+					<ul data-role="listview">
+						    <li>1G = Tahun 1980, 2.4 Kb/s</li>
+						    <li>2G = Tahun 1990, 64 Kb/s</li>
+						    <li>3G = Tahun 2003, 2 Mb/s</li>
+						    <li>4G = Tahun 2009, 100 Mb/s</li>
+						    <li>5G = Tahun 2020, >1 Gb/s</li>
+					</ul>
+					<p>Pemrograman mobile adalah pembuatan aplikasi yang berjalan pada 
+						perangkat bergerak seperti HP / tablet. Aplikasi mobile dikembangkan untuk platform tertentu. Contoh IOS dan Android
+
+					</p>
+				</div>
+			</div>
+			<div class="ui-block-b">
+				<div class="ui-body ui-body-d">
+					<h4>Github dan JQM</h4>
+					<p> Git = Dikembangkan oleh Linux Torvald, VCS tersentralisasi. Memiliki beberapa keunggulan yaitu dapat bekerja secara offline, repository syncing, staging area nyaman, mampu menangani projek besar dengan nyaman. Dapat digunakan melalui Github, Bitbucket, Assembla, Gitorius. Beberapa fungsinya git init, git status, git commit -m, git branch , git checkout.<br><br>
+						Jquery Mobile = framework yang dibangun di atas jQuery, menyediakan berbagai elemen User-interface dan fitur-fitur untuk digunakan dalam aplikasi mobile.
+						Contoh dari demo jquery mobile yaitu slider : 
+					</p>
+					<form>
+						    <label for="slider-1">Seberapa tertarik anda dengan JQuery Mobile?</label>
+						    <input type="range" name="slider-1" id="slider-1" min="0" max="100" value="50">
+					</form>
+					<p>Contoh lain yaitu loader : </p>
+					<button class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="" data-inline="true">Icon</button>
+				</div>
+			</div>
+			<div data-role="panel" id="panel1"> 
+				<h2>AngularJS</h2>
+				<p>AngularJS adalah sebuah framework Javascript yang di kembangkan atau di bangun oleh tim Google, AngularJS menggunakan metode MVC yang membuat source code aplikasi menjadi bersih dan mudah dikembangkan.</p>
+			</div> 
+			<div class="ui-block-b">
+				<div class="ui-body ui-body-d">
+					<h4>AngularJS</h4>
+					<p>Apakah AngularJS?</p>
+					<a href="#panel1" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Click untuk mencari tau</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
+<script>
+	$('.navigateToPage').change(function() {
+		var page = $(this).val();
+		$.mobile.changePage( "#"+page, { transition: "slideup"} );
+	});
+	<!--calculator -->
+	function isNum(args)
+	{
+		args = args.toString();
+		if (args.length == 0)
+			return false;for (var i = 0;i<args.length;i++)
+		{
+			if (args.substring(i,i+1) < "0" || args.substring(i, i+1) > "9")
+			{
+				return false;
+			}
+		}return true; } function deciToBin(arg) {
+			res1 = 999;
+			args = arg;
+			while(args>1)
+			{
+				arg1 = parseInt(args/2);
+				arg2 = args%2;
+				args = arg1;
+				if(res1 == 999)
+				{
+					res1 = arg2.toString();
+				}
+				else
+				{
+					res1 = arg2.toString()+res1.toString();
+				}
+			}
+			if(args == 1 && res1 != 999)
+			{
+				res1 = args.toString()+res1.toString();
+			}
+			else if(args == 0 && res1 == 999)
+			{
+				res1 = 0;
+			}
+			else if(res1 == 999)
+			{
+				res1 = 1;
+			}
+			var ll = res1.length;
+			while(ll%4 != 0)
+			{
+				res1 = "0"+res1;
+				ll = res1.length;
+			}
+			return res1; } function change(name) {
+				var sd = name.value;
+				if(isNum(sd))
+				{
+					var result = deciToBin(sd);
+					document.first.deciBin.value = result;
+				}
+				else
+				{
+					document.first.deci.value = sd.substring(0,sd.length-1) ;
+				} } 
+<!-- Decimal to Hex -->
+function hex_convt(){
+var n1=document.getElementById('t1').value;
+if(isNaN(n1)){
+document.getElementById("d1").innerHTML=document.getElementById('t1').value + " is not a number ";
+}else{
+n1=parseInt(n1);
+document.getElementById("d1").innerHTML=n1.toString(16);
+}
+
+}
+
+				<!-- Color -->
+				function rgb() {
+					document.getElementById("id1").style.backgroundColor =
+					"rgb("+document.getElementById("red").value+","
+					+document.getElementById("green").value+","
+					+document.getElementById("blue").value+")";
+				} 
+
+				<!-- Loader -->
+				$( document ).on( "click", ".show-page-loading-msg", function() {
+					    var $this = $( this ),
+					        theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+					        msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+					        textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+					        textonly = !!$this.jqmData( "textonly" );
+					        html = $this.jqmData( "html" ) || "";
+					    $.mobile.loading( "show", {
+						            text: msgText,
+						            textVisible: textVisible,
+						            theme: theme,
+						            textonly: textonly,
+						            html: html
+					    });
+				})
+				.on( "click", ".hide-page-loading-msg", function() {
+					    $.mobile.loading( "hide" );
+				});
+			</script>
